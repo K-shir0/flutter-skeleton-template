@@ -1,4 +1,5 @@
 # flutter_skeleton_template
+
 <a href="https://github.com/K-shir0/flutter-skeleton-template/actions/workflows/format.yaml"><img src="https://github.com/K-shir0/flutter-skeleton-template/actions/workflows/format.yaml/badge.svg?branch=main" ></a>
 
 A new Flutter project.
@@ -10,6 +11,7 @@ A new Flutter project.
 ## Environment
 
 ## Organization
+
 ```
 lib
 ├── foundation
@@ -25,6 +27,7 @@ lib
 ## Getting Started
 
 ### Setup
+
 ```
 make build-runner
 ```
