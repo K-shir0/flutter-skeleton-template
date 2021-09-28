@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_skeleton_template/foundation/constants.dart';
 import 'package:flutter_skeleton_template/model/product.dart';
 
 class HomePage extends StatelessWidget {
@@ -22,8 +23,7 @@ class HomePage extends StatelessWidget {
                   id: '1',
                   name: '商品名 本',
                   value: 1980,
-                  // TODO(k-shir0): 定数に移動させる. (TestImageUrl)
-                  image: 'https://picsum.photos/200/300',
+                  image: testImageUrl,
                 ),
                 height: size,
                 width: size);
