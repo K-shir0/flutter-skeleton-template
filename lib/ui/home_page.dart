@@ -9,6 +9,7 @@ import 'package:flutter_skeleton_template/ui/route/app_route.gr.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  // TODO(k-shir0): 下タブを追加する.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
