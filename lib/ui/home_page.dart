@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: LayoutBuilder(
           builder: (context, constraints) {
             final size = constraints.maxWidth / 2;
@@ -31,14 +31,14 @@ class HomePage extends StatelessWidget {
 
 /// クリックすると商品詳細ページに推移する。
 class ProductCard extends StatelessWidget {
-  final double height;
-  final double width;
-
   const ProductCard({
     Key? key,
     required this.height,
     required this.width,
   }) : super(key: key);
+
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class ProductCard extends StatelessWidget {
       width: width,
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
