@@ -48,6 +48,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
+// TODO(k-shir0): 別のファイルに移動させる.
 /// クリックすると商品詳細ページに推移する。
 class ProductCard extends StatelessWidget {
   const ProductCard({
