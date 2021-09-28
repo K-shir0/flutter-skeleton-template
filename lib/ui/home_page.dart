@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_skeleton_template/model/product.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,16 +11,32 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(8),
+        // TODO(k-shir0): 端末のサイズによって変更する.
         child: LayoutBuilder(
           builder: (context, constraints) {
             final size = constraints.maxWidth / 2;
 
+            // TODO(k-shir0): 動的に生成するようになったら削除する.
+            final productCard = ProductCard(
+                product: const Product(
+                  id: '1',
+                  name: '商品名 本',
+                  value: 1980,
+                ),
+                height: size,
+                width: size);
+
+            // TODO(k-shir0): スクロールできるようにする.
             return Wrap(
               children: [
-                ProductCard(height: size, width: size),
-                ProductCard(height: size, width: size),
-                ProductCard(height: size, width: size),
-                ProductCard(height: size, width: size),
+                productCard,
+                productCard,
+                productCard,
+                productCard,
+                productCard,
+                productCard,
+                productCard,
+                productCard,
               ],
             );
           },
@@ -33,10 +50,12 @@ class HomePage extends StatelessWidget {
 class ProductCard extends StatelessWidget {
   const ProductCard({
     Key? key,
+    required this.product,
     required this.height,
     required this.width,
   }) : super(key: key);
 
+  final Product product;
   final double height;
   final double width;
 
