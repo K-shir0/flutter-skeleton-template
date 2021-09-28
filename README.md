@@ -2,8 +2,6 @@
 
 <a href="https://github.com/K-shir0/flutter-skeleton-template/actions/workflows/format.yaml"><img src="https://github.com/K-shir0/flutter-skeleton-template/actions/workflows/format.yaml/badge.svg?branch=main" ></a>
 
-A new Flutter project.
-
 ## Documentation
 
 ## Requirements
