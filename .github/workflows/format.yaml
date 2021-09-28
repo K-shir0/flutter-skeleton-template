@@ -7,13 +7,14 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  dart_format:
     runs-on: ubuntu-latest
-    container:
-      image:  google/dart:2.14
-
+    timeout-minutes: 5
     steps:
-    - uses: actions/checkout@v2
-    - name: dartfmt
-      run: dart format ./ --set-exit-if-changed
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+      - run: dart format ./ -l 120 --set-exit-if-change
