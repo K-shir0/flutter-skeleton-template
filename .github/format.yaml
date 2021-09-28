@@ -1,0 +1,19 @@
+name: Format
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container:
+      image:  google/dart:2.14
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: dartfmt
+      run: dart format ./ --set-exit-if-changed
