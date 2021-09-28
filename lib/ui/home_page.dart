@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_skeleton_template/foundation/constants.dart';
 import 'package:flutter_skeleton_template/model/product.dart';
 
+/// ホーム画面.
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
