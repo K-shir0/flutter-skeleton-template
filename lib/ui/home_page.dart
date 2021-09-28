@@ -22,6 +22,8 @@ class HomePage extends StatelessWidget {
                   id: '1',
                   name: '商品名 本',
                   value: 1980,
+                  // TODO(k-shir0): 定数に移動させる. (TestImageUrl)
+                  image: 'https://picsum.photos/200/300',
                 ),
                 height: size,
                 width: size);
@@ -72,19 +74,24 @@ class ProductCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fitHeight,
-                      image: NetworkImage('https://picsum.photos/200/300'),
-                    ),
+                  decoration: BoxDecoration(
+                    image: product.image == null
+                        ? null
+                        : DecorationImage(
+                            fit: BoxFit.fitHeight,
+                            image: NetworkImage(
+                              product.image!,
+                            ),
+                          ),
                   ),
                 ),
               ),
               const SizedBox(
                 height: 8,
               ),
-              const Text('商品名 本'),
-              const Text('¥ 1,980'),
+              Text(product.name),
+              // TODO(k-shir0): コンマを付けるようにする.
+              Text('¥${product.value}'),
             ],
           ),
         ),

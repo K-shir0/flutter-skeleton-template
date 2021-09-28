@@ -22,11 +22,15 @@ class _$ProductTearOff {
   const _$ProductTearOff();
 
   _Product call(
-      {required String id, required String name, required int value}) {
+      {required String id,
+      required String name,
+      required int value,
+      String? image}) {
     return _Product(
       id: id,
       name: name,
       value: value,
+      image: image,
     );
   }
 
@@ -43,6 +47,7 @@ mixin _$Product {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get value => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,7 +58,7 @@ mixin _$Product {
 abstract class $ProductCopyWith<$Res> {
   factory $ProductCopyWith(Product value, $Res Function(Product) then) =
       _$ProductCopyWithImpl<$Res>;
-  $Res call({String id, String name, int value});
+  $Res call({String id, String name, int value, String? image});
 }
 
 /// @nodoc
@@ -69,6 +74,7 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
     Object? id = freezed,
     Object? name = freezed,
     Object? value = freezed,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -83,6 +89,10 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as int,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -92,7 +102,7 @@ abstract class _$ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
   factory _$ProductCopyWith(_Product value, $Res Function(_Product) then) =
       __$ProductCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name, int value});
+  $Res call({String id, String name, int value, String? image});
 }
 
 /// @nodoc
@@ -109,6 +119,7 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? value = freezed,
+    Object? image = freezed,
   }) {
     return _then(_Product(
       id: id == freezed
@@ -123,6 +134,10 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as int,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -130,7 +145,8 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Product with DiagnosticableTreeMixin implements _Product {
-  const _$_Product({required this.id, required this.name, required this.value});
+  const _$_Product(
+      {required this.id, required this.name, required this.value, this.image});
 
   factory _$_Product.fromJson(Map<String, dynamic> json) =>
       _$$_ProductFromJson(json);
@@ -141,10 +157,12 @@ class _$_Product with DiagnosticableTreeMixin implements _Product {
   final String name;
   @override
   final int value;
+  @override
+  final String? image;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Product(id: $id, name: $name, value: $value)';
+    return 'Product(id: $id, name: $name, value: $value, image: $image)';
   }
 
   @override
@@ -154,7 +172,8 @@ class _$_Product with DiagnosticableTreeMixin implements _Product {
       ..add(DiagnosticsProperty('type', 'Product'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('value', value));
+      ..add(DiagnosticsProperty('value', value))
+      ..add(DiagnosticsProperty('image', image));
   }
 
   @override
@@ -166,7 +185,9 @@ class _$_Product with DiagnosticableTreeMixin implements _Product {
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+                const DeepCollectionEquality().equals(other.value, value)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)));
   }
 
   @override
@@ -174,7 +195,8 @@ class _$_Product with DiagnosticableTreeMixin implements _Product {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(value);
+      const DeepCollectionEquality().hash(value) ^
+      const DeepCollectionEquality().hash(image);
 
   @JsonKey(ignore: true)
   @override
@@ -191,7 +213,8 @@ abstract class _Product implements Product {
   const factory _Product(
       {required String id,
       required String name,
-      required int value}) = _$_Product;
+      required int value,
+      String? image}) = _$_Product;
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
 
@@ -201,6 +224,8 @@ abstract class _Product implements Product {
   String get name => throw _privateConstructorUsedError;
   @override
   int get value => throw _privateConstructorUsedError;
+  @override
+  String? get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ProductCopyWith<_Product> get copyWith =>
