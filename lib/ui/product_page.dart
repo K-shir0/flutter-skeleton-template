@@ -32,10 +32,10 @@ class ProductPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Scrollbar(
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: SizedBox.expand(
-            child: SingleChildScrollView(
+        child: SizedBox.expand(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
