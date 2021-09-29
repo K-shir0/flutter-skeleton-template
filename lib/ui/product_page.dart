@@ -28,30 +28,66 @@ class ProductPage extends StatelessWidget {
     );
 
     // TODO(k-shir0): 商品名, 写真, 価格, 数量（プルダウン？）, カートに入れるボタン
+    // TODO(k-shir0): スクロールの挙動を変更する.
     return Scaffold(
       appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: SizedBox.expand(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              /// 商品名
-              // TODO(k-shir0): 太字にする.
-              Text(product.name),
+      body: Scrollbar(
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: SizedBox.expand(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  /// 商品名
+                  // TODO(k-shir0): 太字にする.
+                  // TODO(k-shir0): Themeに移動させる.
+                  Text(product.name),
 
-              // TODO(k-shir0): 複数の画像をスクロール出来るようにする.
-              /// 商品画像
-              SizedBox(
-                width: double.infinity,
-                // TODO(k-shir0): nullを分岐させる.
-                child: Image.network(product.image!, fit: BoxFit.fitWidth),
+                  // TODO(k-shir0): 複数の画像をスクロール出来るようにする.
+                  /// 商品画像
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+                    child: SizedBox(
+                      width: double.infinity,
+                      // TODO(k-shir0): nullを分岐させる.
+                      child: Image.network(
+                        product.image!,
+                        fit: BoxFit.fitWidth,
+                      ),
+                    ),
+                  ),
+
+                  // TODO(k-shir0): 値段部分を赤字にする.
+                  /// 商品値段
+                  Text('価格 ¥ ${product.value}'),
+
+                  DropdownButton(
+                    // TODO(k-shir0): 変更できるようにする.
+                    // TODO(k-shir0): Remove print.
+                    onChanged: print,
+                    value: 1,
+                    items: const [
+                      DropdownMenuItem(value: 1, child: Text('1')),
+                      DropdownMenuItem(value: 2, child: Text('2')),
+                    ],
+                  ),
+
+                  /// カートに入れるボタン
+                  ElevatedButton(
+                    // TODO(k-shir0): カートに入れたときの処理.
+                    onPressed: () {},
+                    child: const SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        'カートに入れる',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  )
+                ],
               ),
-
-              // TODO(k-shir0): 値段部分を赤字にする.
-              /// 商品値段
-              Text('価格 ¥${product.value}'),
-            ],
+            ),
           ),
         ),
       ),
