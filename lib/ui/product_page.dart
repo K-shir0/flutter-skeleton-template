@@ -40,8 +40,6 @@ class ProductPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   /// 商品名
-                  // TODO(k-shir0): 太字にする.
-                  // TODO(k-shir0): Themeに移動させる.
                   Text(product.name),
 
                   // TODO(k-shir0): 複数の画像をスクロール出来るようにする.
