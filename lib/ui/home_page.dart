@@ -1,12 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_skeleton_template/foundation/constants.dart';
 import 'package:flutter_skeleton_template/model/product.dart';
+import 'package:flutter_skeleton_template/ui/route/app_route.gr.dart';
 
 /// ホーム画面.
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  // TODO(k-shir0): 下タブを追加する.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,36 +68,41 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      width: width,
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: product.image == null
-                        ? null
-                        : DecorationImage(
-                            fit: BoxFit.fitHeight,
-                            image: NetworkImage(
-                              product.image!,
+    return GestureDetector(
+      onTap: () {
+        AutoRouter.of(context).push(ProductRoute(id: product.id));
+      },
+      child: SizedBox(
+        height: height,
+        width: width,
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: product.image == null
+                          ? null
+                          : DecorationImage(
+                              fit: BoxFit.fitHeight,
+                              image: NetworkImage(
+                                product.image!,
+                              ),
                             ),
-                          ),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              Text(product.name),
-              // TODO(k-shir0): コンマを付けるようにする.
-              Text('¥${product.value}'),
-            ],
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(product.name),
+                // TODO(k-shir0): コンマを付けるようにする.
+                Text('¥${product.value}'),
+              ],
+            ),
           ),
         ),
       ),
