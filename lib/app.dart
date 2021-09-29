@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'ui/route/app_route.gr.dart';
 
 class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
 
+  /// ルータを定義
   final _appRouter = AppRouter();
 
   // This widget is the root of your application.
