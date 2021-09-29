@@ -28,7 +28,6 @@ class ProductPage extends StatelessWidget {
     );
 
     // TODO(k-shir0): 商品名, 写真, 価格, 数量（プルダウン？）, カートに入れるボタン
-    // TODO(k-shir0): スクロールの挙動を変更する.
     return Scaffold(
       appBar: AppBar(),
       body: Scrollbar(
